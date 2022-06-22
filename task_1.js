@@ -1,4 +1,4 @@
-    function findUser (dateofregister) {
+    function findUser (dateOfRegister) {
         const users = [
         {
             firstName: 'John',
@@ -79,7 +79,7 @@
             registrationDate: '12.10.2021'
         },
     ];
-    console.log(users.filter(element => element.registrationDate === dateofregister));
+    console.log(users.filter(element => element.registrationDate === dateOfRegister));
     
     }
 
