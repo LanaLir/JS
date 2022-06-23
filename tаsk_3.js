@@ -60,18 +60,19 @@ const enterprises = [
 
 // Задание 3.2
 
-  function getEnterpriseNames(your_id) {
-    if (enterprises_id.includes(your_id)) {
-    let searchResult = enterprises.find(element => element.id === your_id)
-    console.log(searchResult.name)               //Если введенный id соответствует id предприятия, то выводим имя
-    } else { for (i = 0; i< enterprises.length; i++) {
-        let serchInDepartment = enterprises[i].departments;
-        searchResult_1 = serchInDepartment.find(element => element.id === your_id);     
-   
-     if (searchResult_1 != undefined) {
-        companyName = enterprises[i].name
-    
-    }}
-    console.log(companyName)
-    }}
-  getEnterpriseNames(8);
+function getEnterpriseNames(your_id) {
+  if (enterprises_id.includes(your_id)) {
+  let searchResult = enterprises.find(element => element.id === your_id)
+  console.log(searchResult.name)               //Если введенный id соответствует id предприятия, то выводим имя
+  } else { for (i = 0; i< enterprises.length; i++) {
+      let serchInDepartment = enterprises[i].departments;
+      searchResult_1 = serchInDepartment.find(element => element.id === your_id); 
+      searchResult_2 = serchInDepartment.find(element => element.name === your_id)    
+         
+   if ((searchResult_1 != undefined) || (searchResult_2 != undefined)) {
+      companyName = enterprises[i].name
+  
+  }}
+  console.log(companyName)
+  } }
+getEnterpriseNames('Отдел тестирования');
