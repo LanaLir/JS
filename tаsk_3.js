@@ -105,9 +105,40 @@ getEnterpriseNames('Отдел тестирования');
     let new_company = new Object;
     new_company['id'] = max_id +1;
     new_company['name'] = company_name;
+    new_company['departments'] = [];
     
     //ДОбавляем объект в конец массива
     enterprises.push(new_company);
     console.log(enterprises);
   };
-  addEnterprise('Предприятие 4')
+  addEnterprise('Предприятие 4');
+
+
+
+  // Задание 3.4. Добавить в предприятие новый отдел.
+
+//ищем id последнего предприятия/отдела
+length = enterprises.length;
+let last_entry = enterprises[length-1].departments.find(element => element.id);
+let max_id = last_entry.id;
+
+
+function addDepartment (add_ID, add_name) {
+
+  //Ищем компанию по Id
+let check_company = enterprises.filter(element => element.id === add_ID)
+ object_id = (check_company.find(element => element.departments));
+ 
+ //Создаем новый департамент
+let new_department = {};
+new_department['id'] = max_id + 1;
+new_department['name'] = add_name;
+new_department['employees_count'] = 0;
+
+   //Добавляем департамент в конец списка департаментов компании
+
+object_id.departments.push(new_department);
+console.log(object_id);
+};
+
+addDepartment(5, 'Тунеядцы')
