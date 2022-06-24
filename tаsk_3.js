@@ -58,7 +58,8 @@ const enterprises = [
   // константы, которые пригодятся
   const enterprises_id = enterprises.map(element => element.id); //id всех предприятий
 
-// Задание 3.1
+/* Задание 3.1. Вывести названия предприятия, отделов в этом придприятии. И количество
+   сотрудников в каждом отделе, и в предприятии в целом*/
 
 for (i = 0; i <= enterprises.length; i++) {
   function get_name (array_name) { 
@@ -71,7 +72,7 @@ for (i = 0; i <= enterprises.length; i++) {
       get_name(enterprises[i].departments);      
 };
 
-// Задание 3.2
+// Задание 3.2. Поиск предприятия по Id или имени отдела
 
 function getEnterpriseNames(your_id) {
   if (enterprises_id.includes(your_id)) {
@@ -89,3 +90,24 @@ function getEnterpriseNames(your_id) {
   console.log(companyName)
   } }
 getEnterpriseNames('Отдел тестирования');
+
+
+//Задание 3.3. Создать в конце массива новый объект "Предприятие"
+  
+  //ищем id последнего предприятия/отдела
+  length = enterprises.length;
+  let last_entry = enterprises[length-1].departments.find(element => element.id);
+  let max_id = last_entry.id;
+  
+  
+  function addEnterprise (company_name) {
+    // создаем новый объект
+    let new_company = new Object;
+    new_company['id'] = max_id +1;
+    new_company['name'] = company_name;
+    
+    //ДОбавляем объект в конец массива
+    enterprises.push(new_company);
+    console.log(enterprises);
+  };
+  addEnterprise('Предприятие 4')
