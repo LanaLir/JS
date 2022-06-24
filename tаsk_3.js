@@ -58,6 +58,19 @@ const enterprises = [
   // константы, которые пригодятся
   const enterprises_id = enterprises.map(element => element.id); //id всех предприятий
 
+// Задание 3.1
+
+for (i = 0; i <= enterprises.length; i++) {
+  function get_name (array_name) { 
+    let count = array_name.map(element => element.employees_count);
+        let amount = count.map(i => x += i, x = 0).reverse()[0]  
+    console.log(enterprises[i].name +  ' (' + amount + ')');
+      array_name.forEach(element => {console.log(" - " + (element.name) + "(" + (element.employees_count) + ")");  
+       }); 
+          };
+      get_name(enterprises[i].departments);      
+};
+
 // Задание 3.2
 
 function getEnterpriseNames(your_id) {
