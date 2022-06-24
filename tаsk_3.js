@@ -155,3 +155,21 @@ let result = enterprises.find(element => element.id === add_ID)
  console.log(result);
 }
 editEnterprises(9, 'Шоколадная фабрика');
+
+
+// Задание 3.6. Изменить название отдела.
+
+function editDepartment (add_ID, newDepartmentName) {
+
+  //Ищем предприятие и отдел, которому соответствует ID
+  for (i = 0; i< enterprises.length; i++) {
+    let serchInDepartment = enterprises[i].departments;
+    searchResult_1 = serchInDepartment.find(element => element.id === add_ID); 
+  
+  //Выбираем нужный отдел и Меняем ему имя
+    if (searchResult_1 != undefined) {
+      searchResult_1.name = newDepartmentName;
+      console.log(enterprises[i])
+    }}
+}
+editDepartment(7, 'Купи-продай')
