@@ -148,12 +148,10 @@ addDepartment(5, 'Тунеядцы');
 function editEnterprises (add_ID, new_name) {
 
   //Ищем компанию по Id
-let find_company = enterprises.filter(element => element.id === add_ID)
- result = (find_company.find(element => element.departments));
+let result = enterprises.find(element => element.id === add_ID)
 
  // Меняем название на новое
  result.name = new_name;
  console.log(result);
 }
-
-editEnterprises(5, 'Шоколадная фабрика');
+editEnterprises(9, 'Шоколадная фабрика');
