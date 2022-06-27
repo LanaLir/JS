@@ -212,3 +212,30 @@ function deleteDepartment (add_ID) {
   
   }
 deleteDepartment(10);
+
+
+// Задание 3.9. Перенос сотрудников из отдела в отдел
+
+function moveEployees (ID_from, ID_to) {
+  
+  //Ищем отдел из которого перенос
+  for (i = 0; i< enterprises.length; i++) {
+  let departmentAll = enterprises[i].departments;  
+  let fromDepartment = departmentAll.find(element => element.id === ID_from);
+  //Ищем отдел в который переносим
+  let toDepartment = departmentAll.find(element => element.id === ID_to);
+      
+  //Переносим сотрудников в нужный отдел и обнуляем счетчив в отделе, из которого делается
+  if (fromDepartment != undefined) {
+    if (toDepartment != undefined)
+   {
+    toDepartment.employees_count += fromDepartment.employees_count;
+    fromDepartment.employees_count = 0;
+    console.log(departmentAll)
+  }
+   else {
+    console.log("Проверьте введеный ID")
+  }}}
+
+      }
+  moveEployees(7, 8)
