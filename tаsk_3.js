@@ -172,4 +172,17 @@ function editDepartment (add_ID, newDepartmentName) {
       console.log(enterprises[i])
     }}
 }
-editDepartment(7, 'Купи-продай')
+editDepartment(7, 'Купи-продай');
+
+// Задание 3.7. Удаление предприятия
+
+function deleteEnterpeises (add_ID) {
+  //Ищем индекс предприятия в массиве
+  let enterprisesIndex =  enterprises.findIndex(element => element.id === add_ID);
+  
+  //Удаляем предприятие
+  enterprises.splice(enterprisesIndex, 1);
+  console.log(enterprises);
+  
+  }
+  deleteEnterpeises(5);
