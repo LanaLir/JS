@@ -186,3 +186,29 @@ function deleteEnterpeises (add_ID) {
   
   }
   deleteEnterpeises(5);
+
+   
+
+  // Задание 3.8. Удаление отдела, где нет сотрудников
+
+function deleteDepartment (add_ID) {
+  
+  //Ищем отдел по ID
+  for (i = 0; i< enterprises.length; i++) {
+  let serchInDepartment = enterprises[i].departments;  //все отделы одной компании
+  let department = serchInDepartment.find(element => element.id === add_ID)
+
+  //Ищу индекс объекта, который нужно удалить
+  departmentIndex = serchInDepartment.findIndex(element => element.id === add_ID); 
+           
+  if (departmentIndex != -1) {
+    //Проверяем, есть ли в отделе сотрудники. Если нет, удаляем
+    if (department.employees_count === 0) { 
+    serchInDepartment.splice(departmentIndex, 1);
+    console.log(enterprises)
+    } else {console.log("вы не можете удалить отдел. В нем есть сотрудники")}
+    
+  }}
+  
+  }
+deleteDepartment(10);
